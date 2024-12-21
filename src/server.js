@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("../swagger.js");
 
 const expressAsyncErrors = require("express-async-errors");
 const morgan = require("morgan");
@@ -71,6 +73,8 @@ app.use("/order", OrderController);
 const reviewRouter = require("./routes/reviewRouter.js");
 app.use("/reviews", reviewRouter);
 
+// Serve Swagger docs
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "not found" });
@@ -78,7 +82,6 @@ app.use("*", (req, res) => {
 
 const errorHandlerMiddleware = require("./middleware/errorHandlerMiddleware.js");
 app.use(errorHandlerMiddleware);
-
 
 module.exports = {
   app,
