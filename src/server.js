@@ -23,9 +23,8 @@ app.use(
       "http://localhost:3000",
       "http://localhost:8080",
       "http://localhost:5173",
-      // Replace with the URL of the frontend + backend in development
-      //      https://render URL
-      //      https://domain URL
+      "https://beanbuzz-api.onrender.com",
+      "https://spectacular-sherbet-684768.netlify.app/",
     ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: "Content-Type, Authorization",
