@@ -8,8 +8,8 @@ require("dotenv").config();
 
 const sampleUsers = [
     {
-        firstName: "Luke",
-        lastName: "Skywalker",
+        firstName: "Admin",
+        lastName: "User",
         email: "admin@email.com",
         phoneNumber: "1231231231",
         password: bcrypt.hashSync("Admin123123",10),
@@ -37,8 +37,8 @@ const sampleUsers = [
 
     },
     {
-        firstName: "Leia",
-        lastName: "Organa",
+        firstName: "Staff",
+        lastName: "User",
         email: "staff@email.com",
         phoneNumber: "3453453451",
         password: bcrypt.hashSync("Staff123123",10),
