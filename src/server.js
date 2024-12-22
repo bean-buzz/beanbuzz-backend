@@ -24,7 +24,7 @@ app.use(
       "http://localhost:8080",
       "http://localhost:5173",
       "https://beanbuzz-api.onrender.com",
-      "https://spectacular-sherbet-684768.netlify.app/",
+      "https://spectacular-sherbet-684768.netlify.app",
     ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: "Content-Type, Authorization",
