@@ -11,6 +11,7 @@
     "delete-users": "node src/utils/seeding/deleteUsers.js",
     "seed-reviews": "node src/utils/seeding/seedReviews.js",
     "delete-reviews": "node src/utils/seeding/deleteReviews.js",
+    "delete-orders": "node src/utils/seeding/deleteOrders.js",
     "test": "jest"
   },
   "keywords": [],
