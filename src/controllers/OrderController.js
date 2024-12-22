@@ -189,6 +189,8 @@ router.get(
           message: "Access denied. You can only view your own history.",
         });
       }
+
+      // Fetch the orders
       const customerOrders = await Order.find({
         customerEmail: {
           $regex: new RegExp(`^${lowercaseCustomerEmail}$`, "i"),
@@ -198,16 +200,16 @@ router.get(
         model: "MenuItem",
       });
 
-      if (!customerOrders.length) {
-        return res
-          .status(404)
-          .json({ message: "No orders found for this customer." });
+      // Handle case where no orders exist
+      if (!customerOrders || customerOrders.length === 0) {
+        return res.status(200).json({ message: "No orders exist" });
       }
 
+      // Return the orders if found
       res.status(200).json(customerOrders);
     } catch (error) {
-      console.error("Error fetching customer orders:", error);
-      res.status(500).json({ message: "Internal server error." });
+      console.error("Error fetching customer orders:", error.message);
+      res.status(500).json({ message: "Internal server error" });
     }
   }
 );
